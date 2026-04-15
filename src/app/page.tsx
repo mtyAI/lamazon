@@ -1,65 +1,199 @@
-import Image from "next/image";
+import Header from "@/components/Header";
+import HeroBanner from "@/components/HeroBanner";
+import CategoryGrid from "@/components/CategoryGrid";
+import ProductCard from "@/components/ProductCard";
+import Footer from "@/components/Footer";
+
+const featuredProducts = [
+  {
+    id: 1,
+    name: "ワイヤレスノイズキャンセリングヘッドホン Pro Max",
+    price: 12800,
+    originalPrice: 19800,
+    rating: 4.5,
+    reviewCount: 1283,
+    image: "🎧",
+    badge: "タイムセール",
+  },
+  {
+    id: 2,
+    name: "オーガニック抹茶パウダー 200g 京都産",
+    price: 1980,
+    rating: 4.8,
+    reviewCount: 567,
+    image: "🍵",
+  },
+  {
+    id: 3,
+    name: "スマートウォッチ Fitness Pro 最新モデル",
+    price: 8900,
+    originalPrice: 14800,
+    rating: 4.3,
+    reviewCount: 892,
+    image: "⌚",
+    badge: "ベストセラー",
+  },
+  {
+    id: 4,
+    name: "超軽量折りたたみ傘 ワンタッチ自動開閉",
+    price: 2480,
+    originalPrice: 3980,
+    rating: 4.6,
+    reviewCount: 2041,
+    image: "☂️",
+  },
+  {
+    id: 5,
+    name: "プログラミング入門 ゼロから学ぶReact開発",
+    price: 2640,
+    rating: 4.7,
+    reviewCount: 324,
+    image: "📘",
+  },
+  {
+    id: 6,
+    name: "ポータブルBluetoothスピーカー 防水IPX7",
+    price: 4980,
+    originalPrice: 7980,
+    rating: 4.4,
+    reviewCount: 1567,
+    image: "🔊",
+    badge: "50%OFF",
+  },
+  {
+    id: 7,
+    name: "オーガニックコットン Tシャツ ユニセックス",
+    price: 3280,
+    rating: 4.2,
+    reviewCount: 738,
+    image: "👕",
+  },
+  {
+    id: 8,
+    name: "ステンレスタンブラー 真空断熱 500ml",
+    price: 1890,
+    originalPrice: 2980,
+    rating: 4.9,
+    reviewCount: 3215,
+    image: "🥤",
+    badge: "人気No.1",
+  },
+];
+
+const recommendedProducts = [
+  {
+    id: 9,
+    name: "ロボット掃除機 AI搭載 自動ゴミ収集",
+    price: 34800,
+    originalPrice: 49800,
+    rating: 4.6,
+    reviewCount: 456,
+    image: "🤖",
+    badge: "新着",
+  },
+  {
+    id: 10,
+    name: "キャンプ用テント 4人用 ワンタッチ設営",
+    price: 15800,
+    rating: 4.5,
+    reviewCount: 289,
+    image: "⛺",
+  },
+  {
+    id: 11,
+    name: "高級チョコレート詰め合わせ 24個入り",
+    price: 3680,
+    rating: 4.8,
+    reviewCount: 1023,
+    image: "🍫",
+  },
+  {
+    id: 12,
+    name: "エルゴノミクス オフィスチェア メッシュ",
+    price: 29800,
+    originalPrice: 39800,
+    rating: 4.4,
+    reviewCount: 672,
+    image: "🪑",
+    badge: "25%OFF",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      <Header />
+
+      <main className="flex-1">
+        <HeroBanner />
+        <CategoryGrid />
+
+        {/* Featured products */}
+        <section className="mx-auto max-w-7xl px-4 py-10">
+          <h2 className="mb-6 text-2xl font-bold text-gray-800">
+            🔥 注目のアイテム
+          </h2>
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+            {featuredProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        </section>
+
+        {/* Deal banner */}
+        <section className="bg-gradient-to-r from-orange-500 to-yellow-400 py-12 text-center text-white">
+          <h2 className="text-3xl font-extrabold md:text-4xl">
+            🎉 本日限定タイムセール
+          </h2>
+          <p className="mt-2 text-lg opacity-90">
+            残り時間 12:34:56 — お見逃しなく！
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+          <button className="mt-6 rounded-full bg-white px-8 py-3 font-bold text-orange-600 shadow-lg transition-transform hover:scale-105">
+            セール会場へ →
+          </button>
+        </section>
+
+        {/* Recommended products */}
+        <section className="mx-auto max-w-7xl px-4 py-10">
+          <h2 className="mb-6 text-2xl font-bold text-gray-800">
+            ✨ あなたへのおすすめ
+          </h2>
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+            {recommendedProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        </section>
+
+        {/* Promo strip */}
+        <section className="mx-auto max-w-7xl px-4 pb-10">
+          <div className="grid gap-4 md:grid-cols-3">
+            <div className="rounded-2xl bg-gradient-to-br from-orange-100 to-orange-200 p-6 text-center">
+              <div className="text-4xl">🚚</div>
+              <h3 className="mt-2 font-bold text-orange-800">送料無料</h3>
+              <p className="mt-1 text-sm text-orange-600">
+                ¥2,000以上のご注文で
+              </p>
+            </div>
+            <div className="rounded-2xl bg-gradient-to-br from-yellow-100 to-yellow-200 p-6 text-center">
+              <div className="text-4xl">🔄</div>
+              <h3 className="mt-2 font-bold text-yellow-800">30日間返品無料</h3>
+              <p className="mt-1 text-sm text-yellow-600">
+                安心してお買い物
+              </p>
+            </div>
+            <div className="rounded-2xl bg-gradient-to-br from-pink-100 to-pink-200 p-6 text-center">
+              <div className="text-4xl">💎</div>
+              <h3 className="mt-2 font-bold text-pink-800">ポイント2倍</h3>
+              <p className="mt-1 text-sm text-pink-600">
+                プライム会員限定
+              </p>
+            </div>
+          </div>
+        </section>
       </main>
-    </div>
+
+      <Footer />
+    </>
   );
 }
