@@ -22,7 +22,7 @@ export default function Header() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Lamazonで検索"
-              className="w-full rounded-l-full px-4 py-2 text-gray-900 placeholder-gray-400 outline-none"
+              className="w-full rounded-l-full bg-white px-4 py-2 text-gray-900 placeholder-gray-400 outline-none"
             />
             <button className="rounded-r-full bg-orange-400 px-5 py-2 font-semibold transition-colors hover:bg-orange-300">
               🔍

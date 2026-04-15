@@ -12,7 +12,7 @@ const featuredProducts = [
     originalPrice: 19800,
     rating: 4.5,
     reviewCount: 1283,
-    image: "🎧",
+    image: "/images/products/headphones.jpg",
     badge: "タイムセール",
   },
   {
@@ -21,7 +21,7 @@ const featuredProducts = [
     price: 1980,
     rating: 4.8,
     reviewCount: 567,
-    image: "🍵",
+    image: "/images/products/matcha.jpg",
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const featuredProducts = [
     originalPrice: 14800,
     rating: 4.3,
     reviewCount: 892,
-    image: "⌚",
+    image: "/images/products/smartwatch.jpg",
     badge: "ベストセラー",
   },
   {
@@ -40,7 +40,7 @@ const featuredProducts = [
     originalPrice: 3980,
     rating: 4.6,
     reviewCount: 2041,
-    image: "☂️",
+    image: "/images/products/umbrella.jpg",
   },
   {
     id: 5,
@@ -48,7 +48,7 @@ const featuredProducts = [
     price: 2640,
     rating: 4.7,
     reviewCount: 324,
-    image: "📘",
+    image: "/images/products/book.jpg",
   },
   {
     id: 6,
@@ -57,7 +57,7 @@ const featuredProducts = [
     originalPrice: 7980,
     rating: 4.4,
     reviewCount: 1567,
-    image: "🔊",
+    image: "/images/products/speaker.jpg",
     badge: "50%OFF",
   },
   {
@@ -66,7 +66,7 @@ const featuredProducts = [
     price: 3280,
     rating: 4.2,
     reviewCount: 738,
-    image: "👕",
+    image: "/images/products/tshirt.jpg",
   },
   {
     id: 8,
@@ -75,7 +75,7 @@ const featuredProducts = [
     originalPrice: 2980,
     rating: 4.9,
     reviewCount: 3215,
-    image: "🥤",
+    image: "/images/products/tumbler.jpg",
     badge: "人気No.1",
   },
 ];
@@ -88,7 +88,7 @@ const recommendedProducts = [
     originalPrice: 49800,
     rating: 4.6,
     reviewCount: 456,
-    image: "🤖",
+    image: "/images/products/robot-vacuum.jpg",
     badge: "新着",
   },
   {
@@ -97,7 +97,7 @@ const recommendedProducts = [
     price: 15800,
     rating: 4.5,
     reviewCount: 289,
-    image: "⛺",
+    image: "/images/products/tent.jpg",
   },
   {
     id: 11,
@@ -105,7 +105,7 @@ const recommendedProducts = [
     price: 3680,
     rating: 4.8,
     reviewCount: 1023,
-    image: "🍫",
+    image: "/images/products/chocolate.jpg",
   },
   {
     id: 12,
@@ -114,7 +114,7 @@ const recommendedProducts = [
     originalPrice: 39800,
     rating: 4.4,
     reviewCount: 672,
-    image: "🪑",
+    image: "/images/products/office-chair.jpg",
     badge: "25%OFF",
   },
 ];

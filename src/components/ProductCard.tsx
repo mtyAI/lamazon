@@ -30,8 +30,12 @@ export default function ProductCard({ product }: { product: Product }) {
       className="group flex flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
     >
       {/* Image area */}
-      <div className="relative flex items-center justify-center bg-gray-50 p-6">
-        <span className="text-7xl">{product.image}</span>
+      <div className="relative aspect-square overflow-hidden bg-gray-50">
+        <img
+          src={product.image}
+          alt={product.name}
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
         {product.badge && (
           <span className="absolute left-3 top-3 rounded-full bg-red-500 px-3 py-1 text-xs font-bold text-white">
             {product.badge}
